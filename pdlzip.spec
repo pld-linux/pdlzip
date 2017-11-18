@@ -1,12 +1,12 @@
 Summary:	Public domain version of lzip
 Summary(pl.UTF-8):	Wersja lzipa wydana jako Public Domain
 Name:		pdlzip
-Version:	1.7
+Version:	1.8
 Release:	1
 License:	Public Domain
 Group:		Applications/Archiving
 Source0:	http://download.savannah.gnu.org/releases/lzip/pdlzip/%{name}-%{version}.tar.lz
-# Source0-md5:	eab898590e18a7e3e2f4f8d86a46497b
+# Source0-md5:	e16b4a38e718e890df01331d07efba41
 URL:		http://savannah.nongnu.org/projects/lzip/
 BuildRequires:	lzip
 BuildRequires:	tar >= 1:1.22
