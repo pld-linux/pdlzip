@@ -1,12 +1,12 @@
 Summary:	Public domain version of lzip
 Summary(pl.UTF-8):	Wersja lzipa wydana jako Public Domain
 Name:		pdlzip
-Version:	1.13
+Version:	1.14
 Release:	1
 License:	Public Domain
 Group:		Applications/Archiving
 Source0:	http://download.savannah.gnu.org/releases/lzip/pdlzip/%{name}-%{version}.tar.lz
-# Source0-md5:	30e85bb27bacfa26e1cc1d16dd6f6f09
+# Source0-md5:	fd039a8ae5a1f0d71f16e30ec52eca7a
 URL:		http://savannah.nongnu.org/projects/lzip/
 BuildRequires:	lzip
 BuildRequires:	tar >= 1:1.22
@@ -32,7 +32,14 @@ wersja kompresora lzip wydana jako "public domain".
 %setup -q
 
 %build
-%configure
+# not autoconf configure, imitates 2.50+ style invocation (exported variables don't work)
+./configure \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	CPPFLAGS="%{rpmcppflags}" \
+	LDFLAGS="%{rpmldflags}" \
+	--prefix=%{_prefix}
+
 %{__make}
 
 %install
